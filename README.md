@@ -32,7 +32,7 @@ A modern browser-based code editor built with HTML, CSS, and JavaScript. It allo
 
 ## 📂 Project Structure
 
-```text
+
 CodeEditor/
 │
 ├── index.html
