@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Code Editor</title>
+
+    <!-- CodeMirror -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/dracula.min.css">
+
+    <link rel="stylesheet"
+        href="style.css">
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     TOP BAR
+========================================= -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="logo">
+            &lt;/&gt;
+        </div>
+
+        <div>
+            <h1>Code Editor</h1>
+
+            <span>
+                HTML • CSS • JavaScript
+            </span>
+        </div>
+
+    </div>
+
+
+    <div class="top-actions">
+
+        <button id="saveBtn">
+            💾 Save
+        </button>
+
+        <button id="downloadBtn">
+            ⬇ Download
+        </button>
+
+        <button id="themeBtn">
+            ☀️ Theme
+        </button>
+
+        <button id="runBtn"
+            class="run-button">
+            ▶ Run
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================
+     MAIN IDE
+========================================= -->
+
+<div class="ide">
+
+
+    <!-- =====================================
+         FILE EXPLORER
+    ====================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-title">
+
+            <span>EXPLORER</span>
+
+            <span>•••</span>
+
+        </div>
+
+
+        <div class="project-name">
+
+            📁 CODE EDITOR
+
+        </div>
+
+
+        <div class="file-list">
+
+            <div class="file active"
+                data-file="html">
+
+                <span>🌐</span>
+
+                index.html
+
+            </div>
+
+
+            <div class="file"
+                data-file="css">
+
+                <span>🎨</span>
+
+                style.css
+
+            </div>
+
+
+            <div class="file"
+                data-file="js">
+
+                <span>⚡</span>
+
+                script.js
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================
+         MAIN AREA
+    ====================================== -->
+
+    <main class="main-area">
+
+
+        <!-- =================================
+             TABS
+        ================================== -->
+
+        <div class="tabs">
+
+            <div class="tab active"
+                data-tab="html">
+
+                🌐 index.html
+
+                <span class="close">
+                    ×
+                </span>
+
+            </div>
+
+
+            <div class="tab"
+                data-tab="css">
+
+                🎨 style.css
+
+                <span class="close">
+                    ×
+                </span>
+
+            </div>
+
+
+            <div class="tab"
+                data-tab="js">
+
+                ⚡ script.js
+
+                <span class="close">
+                    ×
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             EDITOR
+        ================================== -->
+
+        <section class="editor-area">
+
+
+            <div id="htmlEditor"
+                class="editor-container">
+
+                <textarea id="htmlCode"></textarea>
+
+            </div>
+
+
+            <div id="cssEditor"
+                class="editor-container hidden">
+
+                <textarea id="cssCode"></textarea>
+
+            </div>
+
+
+            <div id="jsEditor"
+                class="editor-container hidden">
+
+                <textarea id="jsCode"></textarea>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             PREVIEW
+        ================================== -->
+
+        <section class="preview-section">
+
+
+            <div class="preview-header">
+
+                <div>
+
+                    <span class="live-dot"></span>
+
+                    LIVE PREVIEW
+
+                </div>
+
+
+                <button id="refreshBtn">
+
+                    ↻ Refresh
+
+                </button>
+
+            </div>
+
+
+            <iframe id="output"
+                title="Live Preview">
+            </iframe>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             CONSOLE
+        ================================== -->
+
+        <section class="console-section">
+
+
+            <div class="console-header">
+
+                <span>
+                    TERMINAL / CONSOLE
+                </span>
+
+
+                <button id="clearConsole">
+
+                    Clear
+
+                </button>
+
+            </div>
+
+
+            <div id="consoleOutput">
+
+                <div class="console-line">
+                    <span class="success">
+                        ✓
+                    </span>
+
+                    Ready.
+                    Press Ctrl + Enter to run your code.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+
+<!-- =========================================
+     STATUS BAR
+========================================= -->
+
+<footer class="statusbar">
+
+    <span id="statusMessage">
+        Ready
+    </span>
+
+
+    <span>
+        HTML
+    </span>
+
+
+    <span>
+        UTF-8
+    </span>
+
+
+    <span>
+        Ctrl + Enter → Run
+    </span>
+
+</footer>
+
+
+
+<!-- =========================================
+     CODEMIRROR
+========================================= -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js">
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js">
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/css/css.min.js">
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js">
+</script>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
