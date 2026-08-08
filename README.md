@@ -1,25 +1,25 @@
-# 💻 Browser Code Editor
+#  Browser Code Editor
 
 A modern browser-based code editor built with HTML, CSS, and JavaScript. It allows users to write HTML, CSS, and JavaScript code, execute it instantly, and view the result in a live preview.
 
-## 🚀 Features
+##  Features
 
-- 📝 HTML, CSS, and JavaScript editor
-- 📁 File explorer interface
-- 📑 Multiple file tabs
-- 🎨 Syntax highlighting using CodeMirror
-- 🔢 Line numbers
-- ▶️ Run code instantly
-- 🖥️ Live preview
-- 🧪 JavaScript console
-- 💾 Save code using browser localStorage
-- ⬇️ Download projects as HTML files
-- 🌙 Dark and light themes
-- ⌨️ Ctrl + Enter keyboard shortcut
-- 📱 Responsive design
-- ⚡ Auto-save while editing
+-  HTML, CSS, and JavaScript editor
+-  File explorer interface
+-  Multiple file tabs
+-  Syntax highlighting using CodeMirror
+-  Line numbers
+-  Run code instantly
+-  Live preview
+-  JavaScript console
+-  Save code using browser localStorage
+-  Download projects as HTML files
+-  Dark and light themes
+-  Ctrl + Enter keyboard shortcut
+-  Responsive design
+-  Auto-save while editing
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - HTML5
 - CSS3
@@ -30,7 +30,7 @@ A modern browser-based code editor built with HTML, CSS, and JavaScript. It allo
 - iframe
 - Responsive Web Design
 
-## 📂 Project Structure
+##  Project Structure
 
 CodeEditor/
 │
@@ -40,7 +40,7 @@ CodeEditor/
 ├── README.md
 └── .gitignore
 
-## ▶️ How to Run
+##  How to Run
 
 1. Download or clone this repository.
 2. Open the project folder in VS Code.
@@ -49,7 +49,7 @@ CodeEditor/
 5. Start writing HTML, CSS, and JavaScript.
 6. Click Run or press Ctrl + Enter.
 
-## 💡 How It Works
+##  How It Works
 
 The editor uses CodeMirror to provide a coding-style editing experience.
 
@@ -59,7 +59,7 @@ The browser then renders the code inside the live preview.
 
 User code is also stored in the browser's localStorage, allowing the editor to restore the code when the application is reopened.
 
-## 🔮 Future Improvements
+##  Future Improvements
 
 - ZIP project download
 - More programming languages
@@ -71,7 +71,7 @@ User code is also stored in the browser's localStorage, allowing the editor to r
 - Cloud storage
 - User authentication
 
-## 👩‍💻 Author
+##  Author
 
 Nandhita Nambiar
 
@@ -79,4 +79,7 @@ Built as a web development project to practice HTML, CSS, and JavaScript.
 
 ---
 
-⭐ If you find this project useful, consider giving it a star!
+ If you find this project useful, consider giving it a star!
+
+
+
